@@ -1,2 +1,5 @@
 Temp/
 Library/
+.vs/
+*.userprefs
+obj/
