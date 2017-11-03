@@ -14,6 +14,8 @@ namespace Assets.ProceduralMapGeneration
         public int Y;
         public int Z;
 
+        public int MapLength;
+
         // Use this for initialization
         void Start()
         {
@@ -45,10 +47,10 @@ namespace Assets.ProceduralMapGeneration
 
             for (var i = 0; i < 4; i++)
             {
-                for (var j = 0; j < 20; j++)
+                for (var j = 0; j < MapLength; j++)
                 {               
                     var chunk = new TerrainChunk(settings, noiseProvider, i + X, j + Z, Y);
-                    chunk.CreateTerrain(100);                  
+                    chunk.CreateTerrain();                  
                 }
                    
             }         

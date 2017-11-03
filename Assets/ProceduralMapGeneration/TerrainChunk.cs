@@ -21,11 +21,10 @@ namespace Assets.ProceduralMapGeneration
         private Terrain Terrain { get; set; }
 
         private TerrainChunkSettings Settings { get; set; }
-        private Mesh Mesh { get; set; }
 
         private NoiseProvider NoiseProvider { get; set; }
 
-        public void CreateTerrain(int transform)
+        public void CreateTerrain()
         {
             var terrainData = new TerrainData
             {
