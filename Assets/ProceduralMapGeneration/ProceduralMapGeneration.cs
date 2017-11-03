@@ -10,6 +10,9 @@ namespace Assets.ProceduralMapGeneration
         public int AlphaMapResolution;
         public int Length;
         public int Height;
+        public int X;
+        public int Y;
+        public int Z;
 
         // Use this for initialization
         void Start()
@@ -41,8 +44,14 @@ namespace Assets.ProceduralMapGeneration
             var noiseProvider = new NoiseProvider();
 
             for (var i = 0; i < 4; i++)
-                for (var j = 0; j < 4; j++)
-                    new TerrainChunk(settings, noiseProvider, i, j).CreateTerrain();
+            {
+                for (var j = 0; j < 20; j++)
+                {               
+                    var chunk = new TerrainChunk(settings, noiseProvider, i + X, j + Z, Y);
+                    chunk.CreateTerrain(100);                  
+                }
+                   
+            }         
         }
     }
 }

@@ -4,25 +4,28 @@ namespace Assets.ProceduralMapGeneration
 {
     public class TerrainChunk
     {
-        public TerrainChunk(TerrainChunkSettings settings, NoiseProvider noiseProvider, int v1, int v2)
+        public TerrainChunk(TerrainChunkSettings settings, NoiseProvider noiseProvider, int x, int z, int y)
         {
             Settings = settings;
             NoiseProvider = noiseProvider;
-            X = v1;
-            Z = v2;
+            X = x;
+            Z = z;
+            Y = y;
         }
 
         public int X { get; private set; }
 
         public int Z { get; private set; }
+        public int Y { get; set; }
 
         private Terrain Terrain { get; set; }
 
         private TerrainChunkSettings Settings { get; set; }
+        private Mesh Mesh { get; set; }
 
         private NoiseProvider NoiseProvider { get; set; }
 
-        public void CreateTerrain()
+        public void CreateTerrain(int transform)
         {
             var terrainData = new TerrainData
             {
@@ -35,12 +38,13 @@ namespace Assets.ProceduralMapGeneration
             terrainData.size = new Vector3(Settings.Length, Settings.Height, Settings.Length);
 
             var newTerrainGameObject = Terrain.CreateTerrainGameObject(terrainData);
-            newTerrainGameObject.transform.position = new Vector3(X * Settings.Length, 0, Z * Settings.Length);
+            newTerrainGameObject.transform.position = new Vector3(X * Settings.Length, Y, Z * Settings.Length);
+
             Terrain = newTerrainGameObject.GetComponent<Terrain>();
             Terrain.Flush();
         }
 
-        private float[,] GetHeightmap()
+        public float[,] GetHeightmap()
         {
             var heightmap = new float[Settings.HeightMapResolution, Settings.HeightMapResolution];
 
