@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System.Threading.Tasks;
+using LibNoise.Generator;
 
 namespace Assets.ProceduralMapGeneration
 {
@@ -18,7 +20,7 @@ namespace Assets.ProceduralMapGeneration
         public int Z { get; private set; }
         public int Y { get; set; }
 
-        private Terrain Terrain { get; set; }
+        public Terrain Terrain { get; set; }
 
         private TerrainChunkSettings Settings { get; set; }
 
@@ -31,7 +33,6 @@ namespace Assets.ProceduralMapGeneration
                 heightmapResolution = Settings.HeightMapResolution,
                 alphamapResolution = Settings.AlphamapResolution
             };
-
             var heightmap = GetHeightmap();
             terrainData.SetHeights(0, 0, heightmap);
             terrainData.size = new Vector3(Settings.Length, Settings.Height, Settings.Length);
@@ -54,7 +55,7 @@ namespace Assets.ProceduralMapGeneration
                     var xCoordinate = X + (float)xRes / (Settings.HeightMapResolution - 1);
                     var zCoordinate = Z + (float)zRes / (Settings.HeightMapResolution - 1);
 
-                    heightmap[zRes, xRes] = NoiseProvider.GetValue(xCoordinate, zCoordinate);
+                    heightmap[zRes, xRes] = NoiseProvider.GetValue(xCoordinate, zCoordinate);                
                 }
             }
 

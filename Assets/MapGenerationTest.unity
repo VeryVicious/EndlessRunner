@@ -143,10 +143,12 @@ MonoBehaviour:
   AlphaMapResolution: 129
   Length: 100
   Height: 500
-  X: -4
+  X: -2
   Y: -150
   Z: 0
-  MapLength: 40
+  Width: 2
+  mainCamera: {fileID: 0}
+  MapLength: 20
 --- !u!4 &678698230
 Transform:
   m_ObjectHideFlags: 0
@@ -259,7 +261,9 @@ MonoBehaviour:
   X: 4
   Y: -150
   Z: 0
-  MapLength: 40
+  Width: 2
+  mainCamera: {fileID: 0}
+  MapLength: 20
 --- !u!4 &1806667677
 Transform:
   m_ObjectHideFlags: 0
@@ -387,7 +391,9 @@ MonoBehaviour:
   X: 0
   Y: 0
   Z: 0
-  MapLength: 40
+  Width: 4
+  mainCamera: {fileID: 0}
+  MapLength: 20
 --- !u!4 &2102213679
 Transform:
   m_ObjectHideFlags: 0
