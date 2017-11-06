@@ -257,10 +257,13 @@
     <Compile Include="Assets\ProceduralMapGeneration\ProceduralMapGeneration.cs" />
     <Compile Include="Assets\ProceduralMapGeneration\TerrainChunk.cs" />
     <Compile Include="Assets\ProceduralMapGeneration\TerrainChunkSettings.cs" />
+    <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\PlayerController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\ProceduralMapGeneration\LibNoise\COPYING.LESSER.txt" />
     <None Include="Assets\ProceduralMapGeneration\LibNoise\COPYING.txt" />
+    <None Include="Assets\SpaceFighter\GlassStainedBumpDistort.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

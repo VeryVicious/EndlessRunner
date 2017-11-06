@@ -278,6 +278,7 @@
   <ItemGroup>
     <None Include="Assets\ProceduralMapGeneration\LibNoise\COPYING.LESSER.txt" />
     <None Include="Assets\ProceduralMapGeneration\LibNoise\COPYING.txt" />
+    <None Include="Assets\SpaceFighter\GlassStainedBumpDistort.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
